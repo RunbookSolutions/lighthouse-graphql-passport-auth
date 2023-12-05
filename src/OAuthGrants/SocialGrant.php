@@ -26,7 +26,7 @@ class SocialGrant extends AbstractGrant
     /**
      * {@inheritdoc}
      */
-    public function respondToAccessTokenRequest(ServerRequestInterface $request, ResponseTypeInterface $responseType, DateInterval $accessTokenTTL)
+    public function respondToAccessTokenRequest(ServerRequestInterface $request, ResponseTypeInterface $responseType, DateInterval $accessTokenTTL): ResponseTypeInterface
     {
         // Validate request
         $client = $this->validateClient($request);
@@ -47,7 +47,7 @@ class SocialGrant extends AbstractGrant
     /**
      * {@inheritdoc}
      */
-    public function getIdentifier()
+    public function getIdentifier(): string
     {
         return 'social_grant';
     }
